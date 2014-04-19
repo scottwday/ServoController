@@ -368,7 +368,7 @@ public class ServoController extends Activity implements View.OnClickListener, S
     {
     	char channel = (char) ('a' + n - 1);
     	
-    	String cmd = "" + channel + String.format("%d", v) + "\n";
+    	String cmd = "" + channel + String.format("%02d", v) + "\n";
     	writeString(cmd);
     }
     
