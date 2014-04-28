@@ -2,193 +2,219 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
-
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:orientation="vertical" >
 
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="64" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="64" />
+
+            <SeekBar
+                android:id="@+id/seekBar3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="64" />
+
+            <SeekBar
+                android:id="@+id/seekBar4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="64" />
+        </LinearLayout>
+
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
             <TableRow
-                android:id="@+id/tableRow1"
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" >
-
-                <SeekBar
-                    android:id="@+id/seekBar1"
-                    android:layout_width="285dp"
-                    android:layout_height="wrap_content"
-                    android:max="64" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1" >
-
-                <SeekBar
-                    android:id="@+id/seekBar2"
-                    android:layout_width="285dp"
-                    android:layout_height="wrap_content"
-                    android:max="64" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1" >
-
-                <SeekBar
-                    android:id="@+id/seekBar3"
-                    android:layout_width="285dp"
-                    android:layout_height="wrap_content"
-                    android:max="64" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow4"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1" >
-
-                <SeekBar
-                    android:id="@+id/seekBar4"
-                    android:layout_width="285dp"
-                    android:layout_height="wrap_content"
-                    android:max="64" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow5"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1" >
-
-                <TableLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
-
-                    <TableRow
-                        android:id="@+id/tableRow7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" >
-
-                        <ToggleButton
-                            android:id="@+id/toggleButton1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ToggleButton" />
-
-                        <ToggleButton
-                            android:id="@+id/toggleButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ToggleButton" />
-
-                        <ToggleButton
-                            android:id="@+id/toggleButton3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ToggleButton" />
-
-                        <ToggleButton
-                            android:id="@+id/toggleButton4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ToggleButton" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:id="@+id/tableRow8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" >
-
-                        <Button
-                            android:id="@+id/button1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="P1" />
-
-                        <Button
-                            android:id="@+id/button2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="P2" />
-
-                        <Button
-                            android:id="@+id/button3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="P3" />
-
-                        <Button
-                            android:id="@+id/button4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="P4" />
-
-                    </TableRow>
-                </TableLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow6"
+                android:id="@+id/tableRow7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <ToggleButton
+                    android:id="@+id/toggleButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Servo Power" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ToggleButton
+                    android:id="@+id/toggleButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LEDs" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P1" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P2" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P3" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P4" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Audio" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P5" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P6" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P7" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P8" />
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Audio" />
             </TableRow>
 
         </TableLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="horizontal" >
-
-            <LinearLayout
-                android:layout_width="166dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:orientation="vertical" >
-
-                <Button
-                    android:id="@+id/btnConnect"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="cmdConnect"
-                    android:text="Connect" />
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/lblStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Status"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
+            <Button
+                android:id="@+id/btnConnect"
+                android:layout_width="317dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:gravity="left"
-                android:orientation="vertical" >
-            </LinearLayout>
+                android:onClick="cmdConnect"
+                android:text="Connect" />
+
+            <TextView
+                android:id="@+id/lblStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
-
     </LinearLayout>
 
 </RelativeLayout>

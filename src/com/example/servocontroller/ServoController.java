@@ -63,10 +63,21 @@ public class ServoController extends Activity implements View.OnClickListener, S
   ToggleButton toggleButton3;
   ToggleButton toggleButton4;
   
+  ToggleButton toggleButton5;
+  ToggleButton toggleButton6;
+  ToggleButton toggleButton7;
+  ToggleButton toggleButton8;
+
   Button button1;
   Button button2;
   Button button3;
   Button button4;
+
+  Button button5;
+  Button button6;
+  Button button7;
+  Button button8;
+
   
   Button btnConnect;
   
@@ -96,11 +107,20 @@ public class ServoController extends Activity implements View.OnClickListener, S
         toggleButton2 = (ToggleButton) findViewById(R.id.toggleButton2);
         toggleButton3 = (ToggleButton) findViewById(R.id.toggleButton3);
         toggleButton4 = (ToggleButton) findViewById(R.id.toggleButton4);
+        toggleButton5 = (ToggleButton) findViewById(R.id.toggleButton5);
+        toggleButton6 = (ToggleButton) findViewById(R.id.toggleButton6);
+        toggleButton7 = (ToggleButton) findViewById(R.id.toggleButton7);
+        toggleButton8 = (ToggleButton) findViewById(R.id.toggleButton8);
 
+        
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
+        button5 = (Button) findViewById(R.id.button5);
+        button6 = (Button) findViewById(R.id.button6);
+        button7 = (Button) findViewById(R.id.button7);
+        button8 = (Button) findViewById(R.id.button8);
         
         btnConnect = (Button) findViewById(R.id.btnConnect);
         lblStatus = (TextView) findViewById(R.id.lblStatus);
@@ -114,11 +134,19 @@ public class ServoController extends Activity implements View.OnClickListener, S
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
+        button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+        button8.setOnClickListener(this);
 
         toggleButton1.setOnCheckedChangeListener(this);
         toggleButton2.setOnCheckedChangeListener(this);
         toggleButton3.setOnCheckedChangeListener(this);
         toggleButton4.setOnCheckedChangeListener(this);
+        toggleButton5.setOnCheckedChangeListener(this);
+        toggleButton6.setOnCheckedChangeListener(this);
+        toggleButton7.setOnCheckedChangeListener(this);
+        toggleButton8.setOnCheckedChangeListener(this);
         
         btnConnect.setOnClickListener(this);
                 
@@ -223,6 +251,23 @@ public class ServoController extends Activity implements View.OnClickListener, S
     	case R.id.toggleButton4:
     		OnToggleButtonClicked(4, toggleButton4.isChecked());
     		break;
+
+    	case R.id.toggleButton5:
+    		OnToggleButtonClicked(5, toggleButton5.isChecked());
+    		break;
+    		
+    	case R.id.toggleButton6:
+    		OnToggleButtonClicked(6, toggleButton6.isChecked());
+    		break;
+    		
+    	case R.id.toggleButton7:
+    		OnToggleButtonClicked(7, toggleButton7.isChecked());
+    		break;
+    		
+    	case R.id.toggleButton8:
+    		OnToggleButtonClicked(8, toggleButton8.isChecked());
+    		break;
+    		
     		
     	case R.id.button1:
     		OnButtonClicked(1);
@@ -240,6 +285,21 @@ public class ServoController extends Activity implements View.OnClickListener, S
     		OnButtonClicked(4);
     		break;
     		
+    	case R.id.button5:
+    		OnButtonClicked(5);
+    		break;
+    		
+    	case R.id.button6:
+    		OnButtonClicked(6);
+    		break;
+    		
+    	case R.id.button7:
+    		OnButtonClicked(7);
+    		break;
+    		
+    	case R.id.button8:
+    		OnButtonClicked(8);
+    		break;
     		
     	}
     }
@@ -283,6 +343,18 @@ public class ServoController extends Activity implements View.OnClickListener, S
 		case R.id.toggleButton4:
 			OnToggleButtonClicked(4, arg1);
 			break;
+		case R.id.toggleButton5:
+			OnToggleButtonClicked(5, arg1);
+			break;
+		case R.id.toggleButton6:
+			OnToggleButtonClicked(6, arg1);
+			break;
+		case R.id.toggleButton7:
+			OnToggleButtonClicked(7, arg1);
+			break;
+		case R.id.toggleButton8:
+			OnToggleButtonClicked(8, arg1);
+			break;
 		}
 	}
 	
@@ -290,8 +362,17 @@ public class ServoController extends Activity implements View.OnClickListener, S
     
     void OnToggleButtonClicked(int n, boolean state)
     {
-    	lblStatus.setText("Toggle " + n + " = " + state);
-    	SetOutput(n, state);    	
+    	if (n <= 4)
+    	{
+    		lblStatus.setText("Motor " + n + " = " + state);
+    		SetServoPower(n, !state);
+    	}
+    	else
+    	{
+    		n = n - 4;
+    		lblStatus.setText("Toggle " + n + " = " + state);
+    		SetOutput(n, !state);
+    	}
     }
     
     void OnButtonClicked(int n)
@@ -380,7 +461,16 @@ public class ServoController extends Activity implements View.OnClickListener, S
     	String cmd = "" + channel + value + "\n";
     	writeString(cmd);
     }
-       
+    
+    public void SetServoPower(int n, Boolean v)
+    {
+    	char channel = (char) ('0' + n - 1);
+    	char value = v?'0':'1';
+    	
+    	String cmd = "" + channel + value + "\n";
+    	writeString(cmd);
+    }
+    
     public void PlayWav(String file)
     {
     	String cmd = "p" + file + "\n";
@@ -586,7 +676,7 @@ public class ConnectThread extends Thread
             mmSocket = socket;
             InputStream tmpIn = null;
             OutputStream tmpOut = null;
-     
+            
             // Get the input and output streams, using temp objects because
             // member streams are final
             try {
@@ -644,7 +734,7 @@ public class ConnectThread extends Thread
                     
                     ServoController.this.runOnUiThread(new InvokeOnGotSerialText(s) );
                     
-                    OnGotSerialText(s);
+                    //OnGotSerialText(s);
                     
                 } 
                 catch (IOException e) 
